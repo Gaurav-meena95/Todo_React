@@ -37,7 +37,13 @@ function App() {
           <TodoForm/>
         </div>
         <div className=' flex flex-wrap gap-y-4'>
-        <TodoItems/>
+          {
+            todos.map((todo)=>(
+              <div className='w-full' key={todo.id}>
+                <TodoItems todo={todo}/>
+              </div>
+            ))
+          }   
         </div>
       </div>
     </div>
